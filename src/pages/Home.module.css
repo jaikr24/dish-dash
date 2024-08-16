@@ -1,0 +1,10 @@
+.home {
+  animation: fade 1s ease;
+}
+
+@keyframes fade {
+  from {
+    transform: scale(1.1);
+    filter: blur(0.5rem);
+  }
+}

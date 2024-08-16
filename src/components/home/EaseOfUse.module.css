@@ -1,0 +1,42 @@
+.easeOfUseSection {
+  padding: 3rem 0rem;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.easeOfUse {
+  width: 18rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.imageContainer {
+  width: 5rem;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: var(--main);
+  /* background-color: var(--accent-color); */
+}
+
+.imageContainer img {
+  width: 3rem;
+}
+
+.imageLabel {
+  padding: 1.5rem 0rem 0.5rem 0rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--main);
+}
+
+.imageDescription {
+  text-align: center;
+  font-size: 1rem;
+  color: var(--main);
+}

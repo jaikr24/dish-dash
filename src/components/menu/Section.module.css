@@ -1,0 +1,21 @@
+.section {
+  padding-bottom: 2rem;
+}
+
+.sectionLable {
+  user-select: none;
+  font-weight: 700;
+  font-size: 1.6rem;
+  padding: 2rem 0rem 1rem 1rem;
+  color: var(--main);
+}
+
+.sectionItems {
+  padding: 1rem;
+  display: grid;
+  justify-items: center;
+  justify-content: space-evenly;
+  grid-template-columns: repeat(auto-fill, 14rem);
+  row-gap: 2rem;
+  column-gap: 2rem;
+}

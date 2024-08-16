@@ -1,0 +1,34 @@
+.topsection {
+  height: 100vh;
+  position: relative;
+}
+
+.quote {
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: transparent;
+}
+
+.quote h2 {
+  text-align: center;
+  font-size: 4rem;
+  color: white;
+}
+
+.background {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  overflow: hidden;
+}
+
+.background img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

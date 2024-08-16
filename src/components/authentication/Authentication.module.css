@@ -1,0 +1,88 @@
+.authentication {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 13;
+  background-color: rgba(22, 22, 22, 0.7);
+}
+
+.close {
+  display: none;
+}
+
+.authContainer {
+  width: 60%;
+  height: 70%;
+  position: absolute;
+  filter: none;
+  border-radius: 1rem;
+  overflow: hidden;
+  background-color: white;
+
+  z-index: 15;
+}
+
+.closeButton {
+  position: absolute;
+  right: 0;
+  padding-right: 1rem;
+  font-size: 2rem;
+  color: var(--accent-color);
+  z-index: 16;
+  cursor: pointer;
+
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: scale(.94);
+  }
+}
+
+.formContainer {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  padding-top: 5rem;
+}
+
+.cover {
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--main);
+  transition: transform 0.5s ease; /* Smooth transition for the transform property */
+
+  z-index: 15;
+}
+
+.moveRight {
+  transform: translateX(100%); /* Move to the right */
+}
+
+.moveLeft {
+  transform: translateX(0%); /* Move to the left */
+}
+
+.cover h2 {
+  color: white;
+}
+
+.cover button {
+  width: fit-content;
+  padding: 0.5rem 1rem;
+  margin-top: 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1.2rem;
+  color: white;
+  background-color: var(--accent-color);
+}
