@@ -1,0 +1,41 @@
+.reviewCard {
+  width: 20rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  overflow: hidden;
+  background-color: white;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.reviewName {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.reviewContainer {
+  position: relative;
+}
+
+.quote {
+  width: 2rem;
+  position: absolute;
+  top: -1rem;
+  rotate: 180deg;
+  opacity: 10%;
+}
+
+.review {
+  margin: 1rem;
+  text-align: center;
+}
+
+.ctarContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.star {
+  width: 1rem;
+  margin: 0rem 0.3rem;
+}

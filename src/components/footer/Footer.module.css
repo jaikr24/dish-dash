@@ -1,0 +1,81 @@
+.footer {
+  height: 15rem;
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1.5fr 1fr;
+  background-color: #292d32;
+}
+
+.footerLeft {
+  height: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.subscriptionContainer {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+}
+
+.subscriptionLabel {
+  padding-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.subscription {
+  height: 2.8rem;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.subscription input {
+  height: inherit;
+  padding-left: 1rem;
+  font-size: 1.2rem;
+  border: none;
+  outline: none;
+}
+
+.subscription button {
+  height: inherit;
+  border: none;
+  font-size: 1.2rem;
+  color: white;
+  background-color: var(--accent-color);
+}
+
+.footerRight {
+  height: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: white;
+}
+
+.socialsContainer {
+  padding-left: 4rem;
+}
+
+.socialsContainer p {
+  padding-bottom: 1rem;
+  color: white;
+  font-size: 1.5rem;
+}
+
+.socials {
+  width: 16rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.socials img {
+  height: 2.5rem;
+}
