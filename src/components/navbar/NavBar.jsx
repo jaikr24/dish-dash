@@ -3,15 +3,18 @@ import styles from "./NavBar.module.css";
 import { useEffect, useState } from "react";
 import { usePlate } from "../../contexts/PlateProvider";
 import { useAccount } from "../../contexts/AccountProvider";
+import { useCognitoAuth } from "../../hooks/useCognitoAuth";
 
 function NavBar({ page, setPage }) {
-  const { plateItems } = usePlate();
-
-  const [isVisible, setIsVisible] = useState(true);
   let lastScrollTop = 0;
 
   const currentPage = useLocation();
+  const { plateItems } = usePlate();
+
+  const [isVisible, setIsVisible] = useState(true);
+
   const { loggedIn, setLoggedIn } = useAccount();
+  const { signOut, getUserAttributes } = useCognitoAuth();
 
   useEffect(
     function () {
@@ -20,11 +23,21 @@ function NavBar({ page, setPage }) {
     [setPage, currentPage]
   );
 
-  function authenticate() {
-    setLoggedIn((initial) => !initial);
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  async function handleSignOut() {
+    try {
+      await signOut();
+    } catch (err) {
+      console.log(err);
+    }
+    setLoggedIn(false);
   }
 
-  const handleScroll = () => {
+  function handleScroll() {
     const currentScrollTop = document.documentElement.scrollTop;
     if (currentScrollTop > lastScrollTop) {
       // Scrolling down
@@ -34,12 +47,16 @@ function NavBar({ page, setPage }) {
       setIsVisible(true);
     }
     lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop; // For Mobile or negative scrolling
-  };
+  }
 
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  // async function getAttributes() {
+  //   try {
+  //     const data = await getUserAttributes();
+  //     console.log(data);
+  //   } catch (err) {
+  //     console.log(err);
+  //   }
+  // }
 
   return (
     <nav
@@ -69,13 +86,11 @@ function NavBar({ page, setPage }) {
       </div>
 
       {loggedIn ? (
-        <button className={styles.logoutBtn} onClick={authenticate}>
-          Log out
+        <button className={styles.logoutBtn} onClick={handleSignOut}>
+          Sign out
         </button>
       ) : (
-        <button className={styles.logoutBtn} onClick={authenticate}>
-          Log in
-        </button>
+        <button className={styles.logoutBtn}>Sign in</button>
       )}
     </nav>
   );

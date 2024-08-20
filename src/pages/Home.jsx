@@ -5,6 +5,7 @@ import Membership from "../components/home/Membership";
 import Reviews from "../components/home/Reviews";
 import TopSection from "../components/home/TopSection";
 import styles from "./Home.module.css";
+
 function Home() {
   return (
     <>

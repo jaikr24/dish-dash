@@ -8,21 +8,6 @@ import { useMenu } from "../contexts/MenuProvider";
 function Menu() {
   const menu = useMenu();
 
-  // useEffect(function () {
-  //   async function getMenuItems() {
-  //     try {
-  //       const res = await fetch("http://localhost:8000/Recommended");
-  //       const data = res.json();
-  //       if (!data) throw new Error("No menu availale");
-  //       // setMenu(data);
-  //       console.log(data);
-  //     } catch (err) {
-  //       console.error(err);
-  //     }
-  //   }
-  //   getMenuItems();
-  // }, []);
-
   return (
     <div className={styles.menu}>
       {/* <h1 className={styles.menuLabel}>----- Menu -----</h1> */}

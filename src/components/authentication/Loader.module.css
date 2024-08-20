@@ -1,0 +1,16 @@
+.loader {
+  width: 60%;
+  height: 70%;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1rem;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 200;
+}
+
+.loaderImage {
+  width: 10rem;
+}

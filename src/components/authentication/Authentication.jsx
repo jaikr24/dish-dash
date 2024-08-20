@@ -1,11 +1,15 @@
 import { useState } from "react";
 import styles from "./Authentication.module.css";
-import LoginForm from "./LogInForm";
 import SignUpForm from "./SignUpForm";
+import LogInForm from "./LogInForm";
+import { useAccount } from "../../contexts/AccountProvider";
+import Loader from "./Loader";
 
 function Authentication({ page = "/plate" }) {
   const [hasAccount, setHasAccount] = useState(true);
   const [showDialog, setShowDialog] = useState(true);
+
+  const { isLoading } = useAccount();
 
   function slide() {
     setHasAccount((initial) => !initial);
@@ -17,6 +21,7 @@ function Authentication({ page = "/plate" }) {
 
   return (
     <div className={`${showDialog ? styles.authentication : styles.close}`}>
+      {isLoading && <Loader />}
       <div className={styles.authContainer}>
         {page !== "/plate" && (
           <p className={styles.closeButton} onClick={visibility}>
@@ -37,7 +42,7 @@ function Authentication({ page = "/plate" }) {
         </div>
         <div className={styles.formContainer}>
           <SignUpForm hasAccount={hasAccount} />
-          <LoginForm hasAccount={hasAccount} />
+          <LogInForm hasAccount={hasAccount} />
         </div>
       </div>
     </div>
